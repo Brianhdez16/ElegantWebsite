@@ -59,6 +59,7 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
+  font-weight: bold;
 }
 
 nav ul li a {
@@ -71,4 +72,12 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #575757;
   border-radius: 5px;
+}
+
+
+.roboto-condensed {
+  font-family: "Roboto Condensed", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
