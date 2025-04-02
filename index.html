@@ -22,12 +22,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
+  <!--
   <header id="logo" style="background-color: tan; min-height: 10vh;">
-    <nav class="navbar navbar-expand-lg navbar-light me-auto" style="background-color: tan;">
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: tan;">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <a href=index.html style="width: 40vw;"><img src="ELEGANT LOGO COLOR.png" alt="..."
-            style="height: 75%; width: 75%;justify-content: left; object-fit: contain;"></a>
+            style="width: 30vw;justify-content: left; object-fit: contain;"></a>
         <div class="navbar-nav ms-auto">
           <a style="font-size: 1.75rem; padding-right: 3vw;" class="nav-item nav-link" href="#services">Our Services</a>
           <a style="font-size: 1.75rem; padding-right: 3vw;" class="nav-item nav-link" href="#gallery">Gallery</a>
@@ -36,6 +36,28 @@
       </div>
     </nav>
   </header>
+  -->
+
+  <header id="logo" style="background-color: tan; min-height: 10vh;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: tan;">
+        <a class="navbar-brand" href="index.html">
+            <img src="ELEGANT LOGO COLOR.png" alt="..." class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-item nav-link" href="#services" style="font-size: 2.25rem; padding-right: 2vw;">Our Services</a>
+                <a class="nav-item nav-link" href="#gallery" style="font-size: 2.25rem;padding-right: 2vw;">Gallery</a>
+                <a class="nav-item nav-link" href="#contact-us" style="font-size: 2.25rem;padding-right: 2vw;">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
 
   <div id="title" style="background-color: rgba(0, 0, 0, 0.404);">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
@@ -48,7 +70,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
           aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-inner" style="">
+      <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="Patio-Lawn.jpg" class="d-block w-100" alt="..."
             style="max-height: 60vh; object-fit:cover; width: 100%; height: auto;">
@@ -88,7 +110,7 @@
       <div
         style="text-align: center; display: inline-block; flex: 1; background-color: rgb(197, 100, 111); border-radius: 5px;">
         <h1 style="text-align: center;">Our Services</h1>
-        <ul style="list-style-type:none; font-size: 1.5rem;">
+        <ul style="list-style-type:none; font-size: 1.5rem; padding: 1vh;">
           <li>Brick</li>
           <li>Concrete</li>
           <li>Repair</li>
@@ -101,7 +123,7 @@
       <div
         style=" text-align: center; display: inline-block; flex: 1; background-color: rgb(197, 100, 111); border-radius: 5px;">
         <h1 style="text-align: center;">Service Locations</h1>
-        <ul style="list-style-type:none; font-size: 1.5rem;">
+        <ul style="list-style-type:none; font-size: 1.5rem;padding: 1vh;">
           <li>Des Plaines, IL</li>
           <li>Northbrook, IL</li>
           <li>Niles, IL</li>
