@@ -12,6 +12,34 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "GyvWtB0BokqVngNGd",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // these IDs from the previous steps
+        emailjs.sendForm('service_8jfhc35', 'template_1uxfnu6', this)
+          .then(() => {
+            document.getElementById("contact-form").reset();
+            alert("Thank you for your message. We will try to get back to you in a timely manner");
+            console.log('SUCCESS!');
+          }, (error) => {
+            console.log('FAILED...', error);
+          });
+      });
+    }
+  </script>
+
+
   <title>Elegant Brick Paving</title>
 </head>
 
@@ -22,42 +50,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-  <!--
+
   <header id="logo" style="background-color: tan; min-height: 10vh;">
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: tan;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: tan;">
+      <a class="navbar-brand" href="index.html">
+        <img src="ELEGANT LOGO COLOR.png" alt="..." class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <a href=index.html style="width: 40vw;"><img src="ELEGANT LOGO COLOR.png" alt="..."
-            style="width: 30vw;justify-content: left; object-fit: contain;"></a>
         <div class="navbar-nav ms-auto">
-          <a style="font-size: 1.75rem; padding-right: 3vw;" class="nav-item nav-link" href="#services">Our Services</a>
-          <a style="font-size: 1.75rem; padding-right: 3vw;" class="nav-item nav-link" href="#gallery">Gallery</a>
-          <a style="font-size: 1.75rem;" class="nav-item nav-link" href="#contact-us">Contact Us</a>
+          <a class="nav-item nav-link" href="#services" style="font-size: 2.25rem; padding-right: 2vw;">Our Services</a>
+          <a class="nav-item nav-link" href="#gallery" style="font-size: 2.25rem;padding-right: 2vw;">Gallery</a>
+          <a class="nav-item nav-link" href="#contact-us" style="font-size: 2.25rem;padding-right: 2vw;">Contact Us</a>
         </div>
       </div>
     </nav>
   </header>
-  -->
-
-  <header id="logo" style="background-color: tan; min-height: 10vh;">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: tan;">
-        <a class="navbar-brand" href="index.html">
-            <img src="ELEGANT LOGO COLOR.png" alt="..." class="logo-img">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-                <a class="nav-item nav-link" href="#services" style="font-size: 2.25rem; padding-right: 2vw;">Our Services</a>
-                <a class="nav-item nav-link" href="#gallery" style="font-size: 2.25rem;padding-right: 2vw;">Gallery</a>
-                <a class="nav-item nav-link" href="#contact-us" style="font-size: 2.25rem;padding-right: 2vw;">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
 
   <div id="title" style="background-color: rgba(0, 0, 0, 0.404);">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
@@ -169,24 +180,24 @@
   <div id="contact-us" style="display: flex; justify-content: center; align-items: center;">
     <div style="padding: 20px; text-align: center; width: 100%; max-width: 600px;">
       <h1>Contact Us</h1>
-      <form>
+      <form id="contact-form">
         <div class="row" style="display: flex; justify-content: center; gap: 20px;">
           <div class="col-md-4" style="flex: 1;">
-            <label for="inputEmail4">First Name</label>
-            <input type="text" class="form-control" id="inputEmail4" placeholder="First Name">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Name" name="name">
           </div>
           <div class="col-md-4" style="flex: 1;">
-            <label for="inputPassword4">Last Name</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
+            <label for="inputPassword4">Phone</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="Phone" name="phone">
           </div>
         </div>
         <div class="form-group" style="margin-top: 20px; width: 100%;">
           <label for="inputAddress">Email</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Email">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Email" name="email">
         </div>
         <div class="form-group" style="margin-top: 20px; width: 100%;">
-          <label for="inputAddress2">Phone</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Phone Number">
+          <label for="inputAddress2">Message</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Message" name="message">
         </div>
 
         <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
